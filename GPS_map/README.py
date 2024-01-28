@@ -1,0 +1,1 @@
+This is a program to display gps data (from folder 'source') on a map as a red path.
