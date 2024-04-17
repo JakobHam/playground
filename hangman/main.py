@@ -27,4 +27,5 @@ while turns > 0:
     turns -= 1
     for char in word:
         
-    #https://www.pythonforbeginners.com/code-snippets-source-code/game-hangman
+   
+ #https://www.pythonforbeginners.com/code-snippets-source-code/game-hangman
