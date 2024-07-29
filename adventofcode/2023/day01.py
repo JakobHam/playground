@@ -3,6 +3,18 @@ import re
 from word2number import w2n
 
 
+def replace_written_digits(text):
+    digits_words_pattern = re.compile(r'\b(?:zero|one|two|three|four|five|six|seven|eight|nine|ten|)+\b', re.IGNORECASE)
+    
+    def convert_match_to_digit(match):
+        word_digit = match.group(0)
+        try:
+            return str(w2n.word_to_num(word_digit))
+        except ValueError:
+            return word_digit
+    result = digits_words_pattern.sub(convert_match_to_digit, text)
+    return result
+
 script_dir = os.path.dirname(__file__)
 file_path = os.path.join(script_dir, 'source.txt')
 
@@ -14,7 +26,7 @@ file = open(file_path, 'r', encoding='utf-8')
 
 for line in file:
     line = line.strip()
-    line = w2n.word_to_num(line)
+    line = replace_written_digits(line)
     digits = digit_pattern.findall(line)
     number = digits[0] + digits[-1]
     sum = sum + int(number)
