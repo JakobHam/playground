@@ -14,6 +14,7 @@ file = open(file_path, 'r', encoding='utf-8')
 
 for line in file:
     line = line.strip()
+    line = w2n.word_to_num(line)
     digits = digit_pattern.findall(line)
     number = digits[0] + digits[-1]
     sum = sum + int(number)
