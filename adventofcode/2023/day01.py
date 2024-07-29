@@ -1,10 +1,7 @@
 import os
 import re
 from word2number import w2n
-<<<<<<< HEAD
-=======
 
->>>>>>> 184f3f26061d94140eb6302bb7fc6bca13da4e8d
 
 script_dir = os.path.dirname(__file__)
 file_path = os.path.join(script_dir, 'source.txt')
